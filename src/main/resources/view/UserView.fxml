@@ -5,17 +5,41 @@
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.control.ToggleGroup?>
 
+<?import javafx.geometry.Insets?>
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="pl.edu.agh.to.cinemawiet.controllers.UserController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css">
 
     <center>
-        <VBox styleClass="image-box">
+        <VBox styleClass="image-box" prefWidth="250">
             <Label text="USERS" prefWidth="120"/>
-            <ListView fx:id="usersList" prefWidth="300"/>
+            <ListView fx:id="usersList" prefWidth="200"/>
         </VBox>
     </center>
+
+    <left>
+        <VBox alignment="BASELINE_CENTER" spacing="10">
+            <Label text="NEW USER"/>
+            <Label text="Name:"/>
+            <TextField fx:id="nameField"/>
+            <Label text="Second Name:"/>
+            <TextField fx:id="secondNameField"/>
+            <Label text="Email:"/>
+            <TextField fx:id="emailField"/>
+            <Label text="Role:"/>
+            <HBox>
+                <RadioButton fx:id="adminRadio" text="Admin"/>
+                <RadioButton fx:id="managerRadio" text="Manager"/>
+                <RadioButton fx:id="employeeRadio" text="Employee"/>
+            </HBox>
+
+            <Button text="Add User" onAction="#addUser"/>
+
+
+        </VBox>
+    </left>
 
 </BorderPane>

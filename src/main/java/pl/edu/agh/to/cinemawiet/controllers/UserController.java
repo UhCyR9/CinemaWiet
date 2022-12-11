@@ -3,10 +3,11 @@ package pl.edu.agh.to.cinemawiet.controllers;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
+import javafx.scene.Group;
+import javafx.scene.control.*;
 import org.springframework.stereotype.Controller;
 import pl.edu.agh.to.cinemawiet.models.User;
+import pl.edu.agh.to.cinemawiet.models.UserRole;
 import pl.edu.agh.to.cinemawiet.services.UserService;
 
 
@@ -15,6 +16,27 @@ public class UserController {
 
     @FXML
     ListView<User> usersList = new ListView<>();
+
+    @FXML
+    private TextField nameField;
+
+    @FXML
+    private TextField secondNameField;
+
+    @FXML
+    private TextField emailField;
+
+    @FXML
+    private RadioButton adminRadio;
+
+    @FXML
+    private RadioButton managerRadio;
+
+    @FXML
+    private RadioButton employeeRadio;
+
+    private final ToggleGroup roleGroup = new ToggleGroup();
+
 
     private final UserService userService;
 
@@ -39,6 +61,21 @@ public class UserController {
 
         ObservableList<User> users = FXCollections.observableArrayList(userService.getAllUsers());
         usersList.setItems(users);
+
+        adminRadio.setToggleGroup(roleGroup);
+        adminRadio.setUserData(UserRole.ADMIN);
+        managerRadio.setToggleGroup(roleGroup);
+        managerRadio.setUserData(UserRole.MANAGER);
+        employeeRadio.setToggleGroup(roleGroup);
+        employeeRadio.setUserData(UserRole.EMPLOYEE);
+        employeeRadio.setSelected(true);
+    }
+
+    @FXML
+    public void addUser() {
+        User user = new User(nameField.getText(), secondNameField.getText(), emailField.getText(), (UserRole) roleGroup.getSelectedToggle().getUserData());
+        userService.addUser(user);
+        usersList.getItems().add(user);
     }
 
 }
