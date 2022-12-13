@@ -15,7 +15,7 @@ import pl.edu.agh.to.cinemawiet.utils.exception.InputValidationException;
 public class UserViewController {
 
     @FXML
-    private final ListView<User> usersList = new ListView<>();
+    ListView<User> usersList = new ListView<>();
 
     @FXML
     private TextField nameField;
