@@ -41,6 +41,7 @@ public class UserViewController {
 
 
 
+
     public UserViewController(UserController userController) {
         this.userController = userController;
     }
@@ -61,7 +62,13 @@ public class UserViewController {
             User addedUser = userController.addUser(userRequest);
             usersList.getItems().add(addedUser);
         } catch (InputValidationException ex) {
-            //TODO Powiadomienie o errorze
+
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setTitle("Error while adding user");
+            alert.setHeaderText("Possible reasons:");
+            alert.setContentText(ex.getMessage());
+            alert.showAndWait();
+
         }
     }
 

@@ -7,7 +7,7 @@ import java.io.*;
 
 @Entity
 @Table(name = "users")
-public class User implements Externalizable {
+public class User {
     @Serial
     private static final long serialVersionUID = 1L;
     private final IntegerProperty id = new SimpleIntegerProperty(this, "id");
@@ -104,22 +104,4 @@ public class User implements Externalizable {
                 '}';
     }
 
-
-    @Override
-    public void writeExternal(ObjectOutput out) throws IOException {
-        out.writeInt(id.get());
-        out.writeObject(name.get());
-        out.writeObject(secondName.get());
-        out.writeObject(email.get());
-        out.writeObject(role.get());
-    }
-
-    @Override
-    public void readExternal(ObjectInput in) throws IOException, ClassNotFoundException {
-        id.set(in.readInt());
-        name.set((String) in.readObject());
-        secondName.set((String) in.readObject());
-        email.set((String) in.readObject());
-        role.set((UserRole) in.readObject());
-    }
 }

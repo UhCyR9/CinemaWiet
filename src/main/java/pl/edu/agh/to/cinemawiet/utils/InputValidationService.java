@@ -4,6 +4,7 @@ package pl.edu.agh.to.cinemawiet.utils;
 import org.springframework.stereotype.Service;
 import pl.edu.agh.to.cinemawiet.utils.exception.InputValidationException;
 
+import java.util.ArrayList;
 import java.util.regex.Pattern;
 
 @Service
@@ -14,21 +15,30 @@ public class InputValidationService {
 
     public String validateName(String name) {
         if (!NAME_PATTERN.matcher(name).matches()) {
-            throw new InputValidationException(name);
+            ArrayList<String> given = new ArrayList<>();
+            given.add(name);
+            given.add("name");
+            throw new InputValidationException(given);
         }
         return name;
     }
 
     public String validateSecondName(String secondName) {
         if (!NAME_PATTERN.matcher(secondName).matches()) {
-            throw new InputValidationException(secondName);
+            ArrayList<String> given = new ArrayList<>();
+            given.add(secondName);
+            given.add("second name");
+            throw new InputValidationException(given);
         }
         return secondName;
     }
 
     public String validateMail(String mail) {
         if (!MAIL_PATTERN.matcher(mail).matches()) {
-            throw new InputValidationException(mail);
+            ArrayList<String> given = new ArrayList<>();
+            given.add(mail);
+            given.add("mail");
+            throw new InputValidationException(given);
         }
         return mail;
     }
