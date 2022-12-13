@@ -1,4 +1,4 @@
-package pl.edu.agh.to.cinemawiet.models;
+package pl.edu.agh.to.cinemawiet.user.model;
 
 import javafx.beans.property.*;
 
@@ -36,12 +36,12 @@ public class User implements Externalizable {
         return id;
     }
 
-    public final void setId(int id) {
+    public void setId(int id) {
         this.id.set(id);
     }
 
 
-    public final String getName() {
+    public String getName() {
         return name.get();
     }
 
@@ -49,7 +49,7 @@ public class User implements Externalizable {
         return name;
     }
 
-    public final void setName(String firstName) {
+    public void setName(String firstName) {
         this.name.set(firstName);
     }
 
@@ -58,16 +58,16 @@ public class User implements Externalizable {
         return secondName.get();
     }
 
-    public final StringProperty secondNameProperty() {
+    public StringProperty secondNameProperty() {
         return secondName;
     }
 
-    public final void setSecondName(String lastName) {
+    public void setSecondName(String lastName) {
         this.secondName.set(lastName);
     }
 
 
-    public final String getEmail() {
+    public String getEmail() {
         return email.get();
     }
 
@@ -75,7 +75,7 @@ public class User implements Externalizable {
         return email;
     }
 
-    public final void setEmail(String email) {
+    public void setEmail(String email) {
         this.email.set(email);
     }
 

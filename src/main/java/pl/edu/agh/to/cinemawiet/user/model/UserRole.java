@@ -1,4 +1,4 @@
-package pl.edu.agh.to.cinemawiet.models;
+package pl.edu.agh.to.cinemawiet.user.model;
 
 public enum UserRole {
     ADMIN, MANAGER, EMPLOYEE
