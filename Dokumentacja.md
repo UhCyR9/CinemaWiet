@@ -6,10 +6,18 @@ Celem projektu dla “milestone one”  w repozytorium CinemaWiet jest stworzeni
 Omówimy teraz klasy znajdującę się w folderze user
 
 1) w folderze config znajduje się klasa UserConfig, służy ona do testowania oraz jeśli baza danych nie posiada, żadnego użytkownika dodaje nowego z rolą admin
-1) w folderze contoller znajduje się klasa UserController odpowiada wywołanie dodawania użytkownika z klasy UserService 
-1) w folderze model znajduje się klasa 
-1) w folderze reposority znajduje się klasa UserRepository
-1) w folderze service znajduje się klasa UserService odpowiada ona za dodawanie nowego użytkownika do bazy danych, oraz listowania wszystkich użytkowników
+2) w folderze contoller znajduje się klasa UserController odpowiada wywołanie dodawania użytkownika z klasy UserService oraz wywołanie listowania użytkowników z klasy UserService
+3) w folderze model znajduje się trzy klasy
+   1) User - klasa służąca do tworzenia Usera
+   2) UserRequest - pobiera dane z formularza dodawania z GUI
+   3) UserRole - klasa enum rodzaje ról w aplikacji
+4) w folderze reposority znajduje się interfejs UserRepository dziedziczący po JpaRepository, które zawiera interfejsy API dla podstawowego CRUD
+5) w folderze service znajduje się klasa UserService odpowiada ona za dodawanie nowego użytkownika do bazy danych, oraz listowania wszystkich użytkowników
+
+W folderze utils zostały utworzone walidację po stronie aplikacji odnośnie imienia, nazwiska oraz emaila
+
+W folderze view.controller znajduje się klasa odpowiedzialna za wyświetlanie greaficznego interfejsu
+
 # **Baza Danych:**
 Baza danych została zrealizowana w PostgreSql. Udało nam się uzyskać bazę danych w chmurzę, dzięki temu nie potrzeba załączać plików z nią związanych w repozytorium. Do tego celu użyliśmy strony ElephantSql <https://www.elephantsql.com/>. Skorzystaliśmy z darmowej wersji tej strony i utworzyliśmy nową bazę. 
 
