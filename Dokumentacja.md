@@ -20,3 +20,6 @@ W bazie danych na czas “milestone one” znajdują się cztery tabelę:
 1. **users** - tutaj dodajemy naszych użytkowników wprowadzając ich imię (name), nazwisko (*secondName*), email (*emailAddress*) oraz rolę (*role*). Rola jest to funkcja jaką użytkownik prowadzi w kinie np. admin.
 1. **screening** - jest to tabela pozwalająca nam obsługiwać wyświetlanie filmu w danej sali. Posiada foreign hays do halls oraz films. Jej pole *screeningDate* odpowiada za datę oraz godzinę w której film będzie się wyświetlać. Dzięki tej tabeli jesteśmy w stanie obsłużyć salę dodając do niej wiele filmów. Dodatkową kilka sal może wyświetlać ten sam film o tym samym czasie. 
 
+# **Wykres UML:**
+![](uml.png?raw=true)
+
