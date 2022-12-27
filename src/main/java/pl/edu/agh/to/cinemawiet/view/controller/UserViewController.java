@@ -10,6 +10,7 @@ import pl.edu.agh.to.cinemawiet.user.model.User;
 import pl.edu.agh.to.cinemawiet.user.model.UserRequest;
 import pl.edu.agh.to.cinemawiet.user.model.UserRole;
 import pl.edu.agh.to.cinemawiet.utils.exception.InputValidationException;
+import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
 @Controller
 public class UserViewController {
@@ -40,8 +41,6 @@ public class UserViewController {
     private final UserController userController;
 
 
-
-
     public UserViewController(UserController userController) {
         this.userController = userController;
     }
@@ -62,13 +61,7 @@ public class UserViewController {
             User addedUser = userController.addUser(userRequest);
             usersList.getItems().add(addedUser);
         } catch (InputValidationException ex) {
-
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Error while adding user");
-            alert.setHeaderText("Possible reasons:");
-            alert.setContentText(ex.getMessage());
-            alert.showAndWait();
-
+            Prompts.alert(ex.getMessage());
         }
     }
 

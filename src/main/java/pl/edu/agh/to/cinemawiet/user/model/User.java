@@ -1,95 +1,76 @@
 package pl.edu.agh.to.cinemawiet.user.model;
 
-import javafx.beans.property.*;
-
 import javax.persistence.*;
-import java.io.*;
 
 @Entity
 @Table(name = "users")
 public class User {
-    @Serial
-    private static final long serialVersionUID = 1L;
-    private final IntegerProperty id = new SimpleIntegerProperty(this, "id");
-    private final StringProperty name = new SimpleStringProperty(this, "name");
-    private final StringProperty secondName = new SimpleStringProperty(this, "secondName");
-    private final StringProperty email = new SimpleStringProperty(this, "email");
-    private final ObjectProperty<UserRole> role = new SimpleObjectProperty<>(this, "role");
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private Long id;
+
+    @Column(name = "NAME")
+    private String name;
+
+    @Column(name = "SECOND_NAME")
+    private String secondName;
+
+    @Column(name = "EMAIL")
+    private String email;
+
+    @Column(name = "ROLE")
+    private UserRole role;
 
     public User() {
     }
 
     public User(String name, String secondName, String email, UserRole userRole) {
-        this.name.set(name);
-        this.secondName.set(secondName);
-        this.email.set(email);
-        this.role.set(userRole);
+        this.name = name;
+        this.secondName = secondName;
+        this.email = email;
+        this.role = userRole;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    public int getId() {
-        return id.get();
-    }
 
-    public IntegerProperty idProperty() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id.set(id);
+    public void setId(Long id) {
+        this.id = id;
     }
-
 
     public String getName() {
-        return name.get();
-    }
-
-    public StringProperty nameProperty() {
         return name;
     }
 
-    public void setName(String firstName) {
-        this.name.set(firstName);
+    public void setName(String name) {
+        this.name = name;
     }
-
 
     public String getSecondName() {
-        return secondName.get();
-    }
-
-    public StringProperty secondNameProperty() {
         return secondName;
     }
 
-    public void setSecondName(String lastName) {
-        this.secondName.set(lastName);
+    public void setSecondName(String secondName) {
+        this.secondName = secondName;
     }
-
 
     public String getEmail() {
-        return email.get();
-    }
-
-    public StringProperty emailProperty() {
         return email;
     }
 
     public void setEmail(String email) {
-        this.email.set(email);
+        this.email = email;
     }
-
 
     public UserRole getRole() {
-        return role.get();
-    }
-
-    public ObjectProperty<UserRole> roleProperty() {
         return role;
     }
 
-    public void setRole(UserRole userRole) {
-        this.role.set(userRole);
+    public void setRole(UserRole role) {
+        this.role = role;
     }
 
     @Override
