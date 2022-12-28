@@ -18,7 +18,8 @@ public class ApplicationUI extends Application {
     @Override
     public void start(javafx.stage.Stage primaryStage) throws Exception {
         primaryStage.setTitle("Cinema WIET");
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/UserView.fxml"));
+//        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/UserView.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/view/FilmView.fxml"));
         fxmlLoader.setControllerFactory(context::getBean);
         Pane pane = fxmlLoader.load();
         primaryStage.setScene(new javafx.scene.Scene(pane));
