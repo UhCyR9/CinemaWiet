@@ -1,6 +1,5 @@
 package pl.edu.agh.to.cinemawiet.view.controller;
 
-import javafx.collections.ArrayChangeListener;
 import javafx.collections.FXCollections;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
@@ -11,9 +10,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Component;
 import pl.edu.agh.to.cinemawiet.film.controller.FilmController;
 import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
@@ -22,7 +20,7 @@ import java.sql.Date;
 import java.sql.Time;
 
 
-@Controller
+@Component
 public class FilmViewController {
 
     private final FilmController filmController;

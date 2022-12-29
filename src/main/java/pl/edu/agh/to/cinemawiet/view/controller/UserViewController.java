@@ -4,6 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Controller;
 import pl.edu.agh.to.cinemawiet.user.controller.UserController;
 import pl.edu.agh.to.cinemawiet.user.model.User;
@@ -12,7 +13,7 @@ import pl.edu.agh.to.cinemawiet.user.model.UserRole;
 import pl.edu.agh.to.cinemawiet.utils.exception.InputValidationException;
 import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
-@Controller
+@Component
 public class UserViewController {
 
     @FXML
