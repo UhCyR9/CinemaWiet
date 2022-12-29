@@ -22,6 +22,16 @@ public class FilmService {
         return filmRepository.findAll();
     }
 
+    public void addFilmToRecommended(Film film) {
+        film.setRecommended(true);
+        filmRepository.save(film);
+    }
+
+    public void removeFilmFromRecommended(Film film) {
+        film.setRecommended(false);
+        filmRepository.save(film);
+    }
+
     public Film addFilm(FilmRequest filmRequest) {
         Film filmToAdd = new Film();
         filmToAdd.setName(filmRequest.filmName());

@@ -1,6 +1,8 @@
 package pl.edu.agh.to.cinemawiet.view.controller;
 
+import javafx.collections.ArrayChangeListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.geometry.Insets;
@@ -24,9 +26,15 @@ import java.sql.Time;
 public class FilmViewController {
 
     private final FilmController filmController;
+    private ObservableList<Film> films;
+
+    private ObservableList<Film> recommendedFilms = FXCollections.observableArrayList();
 
     @FXML
     private Button addFilmButton;
+
+    @FXML
+    private CheckBox showRecommendedCheckBox;
 
     @FXML
     private FlowPane filmFlowPane;
@@ -37,13 +45,54 @@ public class FilmViewController {
 
     @FXML
     public void initialize() {
-        ObservableList<Film> films = FXCollections.observableArrayList(filmController.getAllFilms());
+        films = FXCollections.observableArrayList(filmController.getAllFilms());
+        films.forEach(film -> {
+            addNewFilm(film);
+            if (film.isRecommended()) {
+                recommendedFilms.add(film);
+            }
+        });
 
-        films.forEach(this::addNewFilm);
+        films.addListener((ListChangeListener<Film>) c -> {
+            while (c.next()) {
+                if (c.wasAdded()) {
+                    c.getAddedSubList().forEach(this::addNewFilm);
+                }
+            }
+        });
+
+        recommendedFilms.addListener((ListChangeListener<Film>) c -> {
+            while (c.next()) {
+                if (c.wasRemoved() && showRecommendedCheckBox.isSelected()) {
+                    filmFlowPane.getChildren().clear();
+                    recommendedFilms.forEach(this::addNewFilm);
+                }
+            }
+        });
 
         filmFlowPane.setHgap(10);
         filmFlowPane.setVgap(10);
 
+        initializeAddFilmButton();
+        initializeShowRecommendedCheckBox();
+
+    }
+
+    private void initializeShowRecommendedCheckBox()
+    {
+        showRecommendedCheckBox.selectedProperty().addListener((observable, oldValue, newValue) -> {
+            if (newValue) {
+                filmFlowPane.getChildren().clear();
+                recommendedFilms.forEach(this::addNewFilm);
+            } else {
+                filmFlowPane.getChildren().clear();
+                films.forEach(this::addNewFilm);
+            }
+        });
+    }
+
+    private void initializeAddFilmButton()
+    {
         addFilmButton.setOnAction(event -> {
 
 //            SET FORM
@@ -71,7 +120,7 @@ public class FilmViewController {
             dateTo.setPromptText("Data do");
 
             TextField durationField = new TextField();
-            durationField.setPromptText("Czas trwania");
+            durationField.setPromptText("Czas trwania Format - HH:MM:SS");
 
             TextField categoryField = new TextField();
             categoryField.setPromptText("Kategoria");
@@ -91,7 +140,6 @@ public class FilmViewController {
 
             grid.add(new Label("Czas trwania:"), 0, 3);
             grid.add(durationField, 1, 3);
-            grid.add(new Label("Format - hh:mm:ss"), 2, 3);
 
             grid.add(new Label("Kategoria:"), 0, 4);
             grid.add(categoryField, 1, 4);
@@ -111,7 +159,6 @@ public class FilmViewController {
 
                     Film film = filmController.addFilm(filmRequest);
                     films.add(film);
-                    addNewFilm(film);
                 }
                 return null;
             });
@@ -121,6 +168,49 @@ public class FilmViewController {
     }
 
     private void addNewFilm(Film film) {
+        VBox vBox = initializeFilmBox(film);;
+
+        vBox.setOnMouseClicked(event -> {
+            Dialog<ButtonType> dialog = new Dialog<>();
+            dialog.setTitle("Rekomendacja");
+            if (film.isRecommended()) {
+                dialog.setContentText("Czy chcesz usunąć film " + film.getName() + " z rekomendowanych?");
+
+                ButtonType okButtonType = new ButtonType("Usuń", ButtonBar.ButtonData.OK_DONE);
+                ButtonType cancelButtonType = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+                dialog.getDialogPane().getButtonTypes().addAll(okButtonType, cancelButtonType);
+
+                dialog.setResultConverter(dialogButton -> {
+                    if (dialogButton == okButtonType) {
+                        filmController.removeFilmFromRecommended(film);
+                        recommendedFilms.remove(film);
+                    }
+                    return null;
+                });
+            }
+            else {
+                dialog.setContentText("Czy chcesz dodać film " + film.getName() + " do rekomendowanych?");
+
+                ButtonType okButtonType = new ButtonType("Dodaj", ButtonBar.ButtonData.OK_DONE);
+                ButtonType cancelButtonType = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+                dialog.getDialogPane().getButtonTypes().addAll(okButtonType, cancelButtonType);
+
+                dialog.setResultConverter(dialogButton -> {
+                    if (dialogButton == okButtonType) {
+                        filmController.addFilmToRecommended(film);
+                        recommendedFilms.add(film);
+                    }
+                    return null;
+                });
+            }
+
+            dialog.showAndWait();
+        });
+
+        filmFlowPane.getChildren().add(vBox);
+    }
+
+    private VBox initializeFilmBox(Film film) {
         Image img = new Image(film.getImageUrl());
         ImageView imgView = new ImageView(img);
         imgView.setFitHeight(270);
@@ -133,6 +223,7 @@ public class FilmViewController {
         vBox.getChildren().add(new Label(film.getDuration().toString()));
         vBox.getChildren().add(new Label(film.getCategory()));
         vBox.setAlignment(javafx.geometry.Pos.CENTER);
-        filmFlowPane.getChildren().add(vBox);
+
+        return vBox;
     }
 }

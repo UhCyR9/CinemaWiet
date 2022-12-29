@@ -24,6 +24,14 @@ public class FilmController {
         return filmService.getAllFilms();
     }
 
+    public void addFilmToRecommended(Film film) {
+        filmService.addFilmToRecommended(film);
+    }
+
+    public void removeFilmFromRecommended(Film film) {
+        filmService.removeFilmFromRecommended(film);
+    }
+
 
 
 }

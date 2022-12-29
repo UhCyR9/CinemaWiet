@@ -31,6 +31,17 @@ public class Film {
     @Column(name = "IMAGEURL")
     private String imageUrl;
 
+    public boolean isRecommended() {
+        return recommended;
+    }
+
+    public void setRecommended(boolean recommended) {
+        this.recommended = recommended;
+    }
+
+    @Column(name = "RECOMMENDED")
+    private boolean recommended;
+
     public long getId() {
         return id;
     }
