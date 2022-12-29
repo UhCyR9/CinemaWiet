@@ -16,8 +16,8 @@ public class FilmController {
         this.filmService = filmService;
     }
 
-    public void addFilm(FilmRequest filmRequest) {
-        filmService.addFilm(filmRequest);
+    public Film addFilm(FilmRequest filmRequest) {
+        return filmService.addFilm(filmRequest);
     }
 
     public List<Film> getAllFilms() {

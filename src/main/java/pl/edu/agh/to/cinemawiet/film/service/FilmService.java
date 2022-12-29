@@ -24,6 +24,12 @@ public class FilmService {
 
     public Film addFilm(FilmRequest filmRequest) {
         Film filmToAdd = new Film();
+        filmToAdd.setName(filmRequest.filmName());
+        filmToAdd.setDateFrom(filmRequest.dateFrom());
+        filmToAdd.setDateTo(filmRequest.dateTo());
+        filmToAdd.setDuration(filmRequest.duration());
+        filmToAdd.setCategory(filmRequest.category());
+        filmToAdd.setImageUrl(filmRequest.imageUrl());
 
         return filmRepository.save(filmToAdd);
     }
