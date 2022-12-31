@@ -6,6 +6,7 @@ import pl.edu.agh.to.cinemawiet.user.model.UserRequest;
 import pl.edu.agh.to.cinemawiet.user.service.UserService;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Controller
@@ -26,6 +27,10 @@ public class UserController {
 
     public List<User> getAllUsers() {
         return userService.getAllUsers();
+    }
+
+    public Optional<User> getUserByAuth(String mail, String password) {
+        return userService.getUserByAuth(mail, password);
     }
 
 }

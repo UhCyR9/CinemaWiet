@@ -26,6 +26,8 @@
             <TextField fx:id="secondNameField"/>
             <Label text="Email:"/>
             <TextField fx:id="emailField"/>
+            <Label text="Password"/>
+            <PasswordField fx:id="passwordField"/>
             <Label text="Role:"/>
             <HBox>
                 <RadioButton fx:id="adminRadio" text="Admin"/>
@@ -34,8 +36,6 @@
             </HBox>
 
             <Button text="Add User" onAction="#addUser"/>
-
-
         </VBox>
     </left>
 

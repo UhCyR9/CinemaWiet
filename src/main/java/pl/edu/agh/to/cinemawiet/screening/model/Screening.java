@@ -9,38 +9,38 @@ public class Screening {
     @Id
     @GeneratedValue
     @Column(name = "SCREENINGID")
-    private int screeningId;
+    private long screeningId;
 
     @Column(name = "FILMID")
-    private int filmId;
+    private long filmId;
 
     @Column(name = "HALLID")
-    private int hallId;
+    private long hallId;
 
     @Column(name = "SCREENINGDATE")
     private Timestamp screeningDate;
 
-    public int getScreeningId() {
+    public long getScreeningId() {
         return screeningId;
     }
 
-    public void setScreeningId(int screeningId) {
+    public void setScreeningId(long screeningId) {
         this.screeningId = screeningId;
     }
 
-    public int getFilmId() {
+    public long getFilmId() {
         return filmId;
     }
 
-    public void setFilmId(int filmId) {
+    public void setFilmId(long filmId) {
         this.filmId = filmId;
     }
 
-    public int getHallId() {
+    public long getHallId() {
         return hallId;
     }
 
-    public void setHallId(int hallId) {
+    public void setHallId(long hallId) {
         this.hallId = hallId;
     }
 

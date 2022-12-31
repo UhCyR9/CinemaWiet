@@ -19,16 +19,20 @@ public class User {
     @Column(name = "EMAIL")
     private String email;
 
+    @Column(name = "PASSWORD")
+    private String password;
+
     @Column(name = "ROLE")
     private UserRole role;
 
     public User() {
     }
 
-    public User(String name, String secondName, String email, UserRole userRole) {
+    public User(String name, String secondName, String email, String password, UserRole userRole) {
         this.name = name;
         this.secondName = secondName;
         this.email = email;
+        this.password = password;
         this.role = userRole;
     }
 
@@ -71,6 +75,14 @@ public class User {
 
     public void setRole(UserRole role) {
         this.role = role;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override

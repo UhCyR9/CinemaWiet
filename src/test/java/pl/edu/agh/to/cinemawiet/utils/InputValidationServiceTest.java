@@ -1,6 +1,7 @@
 package pl.edu.agh.to.cinemawiet.utils;
 
 
+import org.junit.jupiter.api.Test;
 import pl.edu.agh.to.cinemawiet.utils.exception.InputValidationException;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -10,7 +11,7 @@ public class InputValidationServiceTest {
 
     private final InputValidationService validationService = new InputValidationService();
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateSimpleEmail() {
         //given
         String mail = "sample@mail.com";
@@ -22,7 +23,7 @@ public class InputValidationServiceTest {
         assertEquals(mail, validMail);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateEmailWithNumber() {
         //given
         String mail = "sample3@mail.com";
@@ -34,7 +35,7 @@ public class InputValidationServiceTest {
         assertEquals(mail, validMail);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateEmailWithWhitespace() {
         //given
         String mail = "samp le3@mail.com";
@@ -43,7 +44,7 @@ public class InputValidationServiceTest {
         assertThrows(InputValidationException.class, () -> validationService.validateMail(mail));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateEmailWithoutAtSign() {
         //given
         String mail = "samplemail.com";
@@ -52,7 +53,7 @@ public class InputValidationServiceTest {
         assertThrows(InputValidationException.class, () -> validationService.validateMail(mail));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateTooShortMail() {
         //given
         String mail = "sample@mail";
@@ -61,7 +62,7 @@ public class InputValidationServiceTest {
         assertThrows(InputValidationException.class, () -> validationService.validateMail(mail));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateSimpleName() {
         //given
         String name = "Jan";
@@ -73,7 +74,7 @@ public class InputValidationServiceTest {
         assertEquals(name, validName);
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateWhitespaceName() {
         //given
         String name = "J an";
@@ -82,7 +83,7 @@ public class InputValidationServiceTest {
         assertThrows(InputValidationException.class, () -> validationService.validateName(name));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateNameWithNumber() {
         //given
         String name = "Jan3";
@@ -91,7 +92,7 @@ public class InputValidationServiceTest {
         assertThrows(InputValidationException.class, () -> validationService.validateName(name));
     }
 
-    @org.junit.jupiter.api.Test
+    @Test
     void validateNameWithNonCapitalLetterStart() {
         //given
         String name = "jan";

@@ -82,8 +82,8 @@ public class ScreeningViewController {
             String time = selectedHour.getText();
             Timestamp timestamp = Timestamp.valueOf(date + " " + time + ":00");
 
-            ScreeningRequest screeningRequest = new ScreeningRequest((int)film.getId(), hall, timestamp);
-            screeningController.addScrenning(screeningRequest);
+            ScreeningRequest screeningRequest = new ScreeningRequest(film.getId(), hall, timestamp);
+            screeningController.addScreening(screeningRequest);
         }
     }
 }

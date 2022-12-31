@@ -16,12 +16,12 @@ public class ScreeningController {
         this.screeningService = screeningService;
     }
 
-    public Screening addScrenning(ScreeningRequest screnning) {
-        return screeningService.addScrenning(screnning);
+    public Screening addScreening(ScreeningRequest screening) {
+        return screeningService.addScreening(screening);
     }
 
-    public List<Screening> getAllScrennings() {
-        return screeningService.getAllScrennings();
+    public List<Screening> getAllScreenings() {
+        return screeningService.getAllScreenings();
     }
 }
 

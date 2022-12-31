@@ -166,7 +166,7 @@ public class FilmViewController {
     }
 
     private void addNewFilm(Film film) {
-        VBox vBox = initializeFilmBox(film);;
+        VBox vBox = initializeFilmBox(film);
 
         vBox.setOnMouseClicked(event -> {
             Dialog<ButtonType> dialog = new Dialog<>();

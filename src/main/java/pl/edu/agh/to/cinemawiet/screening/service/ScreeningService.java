@@ -16,16 +16,16 @@ public class ScreeningService {
         this.screeningRepository = screeningRepository;
     }
 
-    public Screening addScrenning(ScreeningRequest screnningRequest) {
+    public Screening addScreening(ScreeningRequest screeningRequest) {
         Screening screening = new Screening();
-        screening.setFilmId(screnningRequest.filmId());
-        screening.setHallId(screnningRequest.hallId());
-        screening.setScreeningDate(screnningRequest.screeningDate());
+        screening.setFilmId(screeningRequest.filmId());
+        screening.setHallId(screeningRequest.hallId());
+        screening.setScreeningDate(screeningRequest.screeningDate());
 
         return screeningRepository.save(screening);
     }
 
-    public List<Screening> getAllScrennings() {
+    public List<Screening> getAllScreenings() {
         return screeningRepository.findAll();
     }
 

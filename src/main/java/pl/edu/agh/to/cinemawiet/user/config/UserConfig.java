@@ -15,7 +15,7 @@ public class UserConfig {
     CommandLineRunner commandLineRunner(UserRepository userRepository) {
         return args -> {
             if(userRepository.count() == 0) {
-                userRepository.save(new User("Kamil", "Kowalski", "test@gmail.com", UserRole.ADMIN));
+                userRepository.save(new User("Kamil", "Kowalski", "test@gmail.com", "abc", UserRole.ADMIN));
             }
         };
     }
