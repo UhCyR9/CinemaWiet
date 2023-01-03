@@ -1,7 +1,5 @@
 package pl.edu.agh.to.cinemawiet.screening.model;
 
-import org.hibernate.annotations.Subselect;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 

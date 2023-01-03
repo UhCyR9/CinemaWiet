@@ -2,7 +2,6 @@ package pl.edu.agh.to.cinemawiet.view.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.css.Match;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import org.springframework.stereotype.Component;
@@ -12,21 +11,15 @@ import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.hall.controller.HallController;
 import pl.edu.agh.to.cinemawiet.hall.model.Hall;
 import pl.edu.agh.to.cinemawiet.screening.controller.ScreeningController;
-import pl.edu.agh.to.cinemawiet.screening.model.Screening;
 import pl.edu.agh.to.cinemawiet.screening.model.ScreeningRequest;
 import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
-
-import java.util.Date;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Duration;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-import java.util.List;
+import java.util.Date;
 import java.util.regex.Pattern;
 
 
@@ -38,8 +31,6 @@ public class ScreeningViewController {
 
     private final HallController hallController;
 
-    @FXML
-    private Button returnButton;
     @FXML
     ListView<Film> filmsList;
     @FXML
@@ -118,9 +109,9 @@ public class ScreeningViewController {
             toConvert = date + " " + lt1.toString()+":00";
             Timestamp endingDate = Timestamp.valueOf(toConvert);
 
-            //validate if film is displayed beetwen
+            //validate if film is displayed between
             SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-            Date toCompareDate= null;
+            Date toCompareDate;
             try {
                 toCompareDate = sdf.parse(date);
             } catch (ParseException e) {

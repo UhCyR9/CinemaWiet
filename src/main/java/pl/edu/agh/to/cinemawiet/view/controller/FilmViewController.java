@@ -33,9 +33,6 @@ public class FilmViewController {
     private Button addFilmButton;
 
     @FXML
-    private Button returnButton;
-
-    @FXML
     private CheckBox showRecommendedCheckBox;
 
     @FXML

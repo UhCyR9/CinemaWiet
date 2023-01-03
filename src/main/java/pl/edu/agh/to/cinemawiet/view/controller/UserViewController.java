@@ -4,11 +4,9 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import pl.edu.agh.to.cinemawiet.ApplicationUI;
-import pl.edu.agh.to.cinemawiet.user.context.UserContext;
 import pl.edu.agh.to.cinemawiet.user.controller.UserController;
 import pl.edu.agh.to.cinemawiet.user.model.User;
 import pl.edu.agh.to.cinemawiet.user.model.UserRequest;
@@ -19,8 +17,7 @@ import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 @Component
 public class UserViewController {
 
-    @FXML
-    private Button returnButton;
+
     @FXML
     ListView<User> usersList = new ListView<>();
 

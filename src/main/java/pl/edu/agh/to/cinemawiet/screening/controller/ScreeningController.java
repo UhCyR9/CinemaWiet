@@ -1,11 +1,10 @@
 package pl.edu.agh.to.cinemawiet.screening.controller;
-import pl.edu.agh.to.cinemawiet.screening.model.ScreeningRequest;
-import pl.edu.agh.to.cinemawiet.screening.model.Screening;
-import pl.edu.agh.to.cinemawiet.screening.service.ScreeningService;
 
 import org.springframework.stereotype.Controller;
+import pl.edu.agh.to.cinemawiet.screening.model.Screening;
+import pl.edu.agh.to.cinemawiet.screening.model.ScreeningRequest;
+import pl.edu.agh.to.cinemawiet.screening.service.ScreeningService;
 
-import java.sql.Date;
 import java.sql.Time;
 import java.sql.Timestamp;
 import java.util.List;

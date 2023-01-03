@@ -31,3 +31,22 @@ W bazie danych na czas “milestone one” znajdują się cztery tabelę:
 # **Wykres UML:**
 ![](uml.png?raw=true)
 
+
+# **Autentykacja:**
+Autentykacja została wprowadzona wykorzystując wzorzec singleton. Klasą, która przechowuje informacje o aktualnie zalogowanym użytkowniku jest UserContext z pakietu user.
+
+# **Logowanie i role w systemie:**
+1. **admin** - 
+   1. **mail**: admin@admin.com
+   1. **hasło**: admin
+   1. Posiada dostęp do wszystkich 3 aktualnie zaimplementowanych widoków czyli user, screening oraz film view
+1. **manager** - 
+   1. **mail**: man@man.com
+   1. **hasło**: manager
+   1. Posiada dostęp do film oraz user view
+1. **employee** - 
+   1. **mail**: user@user.com
+   1. **hasło**: user
+   1. Posiada dostęp wyłącznie do screning view
+
+

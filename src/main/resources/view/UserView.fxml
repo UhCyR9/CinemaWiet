@@ -8,7 +8,7 @@
 <BorderPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="pl.edu.agh.to.cinemawiet.view.controller.UserViewController"
-            prefHeight="400.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css">
+            prefHeight="420.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css">
 
     <center>
         <VBox styleClass="image-box" prefWidth="250">
