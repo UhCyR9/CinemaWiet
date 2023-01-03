@@ -1,5 +1,7 @@
 package pl.edu.agh.to.cinemawiet.screening.model;
 
+import org.hibernate.annotations.Subselect;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -19,6 +21,9 @@ public class Screening {
 
     @Column(name = "SCREENINGDATE")
     private Timestamp screeningDate;
+
+    @Column(name = "SCREENINGEND")
+    private Timestamp screeningEnd;
 
     public long getScreeningId() {
         return screeningId;
@@ -50,5 +55,13 @@ public class Screening {
 
     public void setScreeningDate(Timestamp screeningDate) {
         this.screeningDate = screeningDate;
+    }
+
+    public Timestamp getScreeningEnd() {
+        return screeningEnd;
+    }
+
+    public void setScreeningEnd(Timestamp screeningEnd) {
+        this.screeningEnd = screeningEnd;
     }
 }

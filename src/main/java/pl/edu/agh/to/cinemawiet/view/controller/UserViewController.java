@@ -7,6 +7,7 @@ import javafx.scene.control.*;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
+import pl.edu.agh.to.cinemawiet.ApplicationUI;
 import pl.edu.agh.to.cinemawiet.user.context.UserContext;
 import pl.edu.agh.to.cinemawiet.user.controller.UserController;
 import pl.edu.agh.to.cinemawiet.user.model.User;
@@ -18,6 +19,8 @@ import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 @Component
 public class UserViewController {
 
+    @FXML
+    private Button returnButton;
     @FXML
     ListView<User> usersList = new ListView<>();
 
@@ -102,5 +105,9 @@ public class UserViewController {
         return new UserRequest(nameField.getText(), secondNameField.getText(),
                 emailField.getText(), encoder.encode(passwordField.getText()),
                 (UserRole) roleGroup.getSelectedToggle().getUserData());
+    }
+    @FXML
+    public void mainView() throws Exception{
+        ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
     }
 }

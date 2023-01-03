@@ -9,6 +9,6 @@ public class CinemaWIETApplication {
 
 	public static void main(String[] args) {
 		Application.launch(ApplicationUI.class, args);
-	}
+	}	
 
 }

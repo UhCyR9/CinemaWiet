@@ -38,8 +38,8 @@
             </VBox>
 
             <Button text="Akceptuj" onAction="#addScreening"/>
+            <Button fx:id="returnButton" mnemonicParsing="false" text="Cofnij do menu głównego" onAction="#mainView"/>
         </VBox>
-
     </center>
 
 </BorderPane>

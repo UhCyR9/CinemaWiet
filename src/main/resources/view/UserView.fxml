@@ -36,7 +36,9 @@
             </HBox>
 
             <Button text="Add User" onAction="#addUser"/>
+            <Button fx:id="returnButton" mnemonicParsing="false" text="Cofnij do menu głównego" onAction="#mainView"/>
         </VBox>
     </left>
+
 
 </BorderPane>

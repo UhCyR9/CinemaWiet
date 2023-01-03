@@ -12,6 +12,7 @@ import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 import org.springframework.stereotype.Component;
+import pl.edu.agh.to.cinemawiet.ApplicationUI;
 import pl.edu.agh.to.cinemawiet.film.controller.FilmController;
 import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
@@ -30,6 +31,9 @@ public class FilmViewController {
 
     @FXML
     private Button addFilmButton;
+
+    @FXML
+    private Button returnButton;
 
     @FXML
     private CheckBox showRecommendedCheckBox;
@@ -223,5 +227,9 @@ public class FilmViewController {
         vBox.setAlignment(javafx.geometry.Pos.CENTER);
 
         return vBox;
+    }
+    @FXML
+    public void mainView() throws Exception{
+        ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
     }
 }
