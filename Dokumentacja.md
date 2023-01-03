@@ -72,7 +72,7 @@ Istnieje również opcja dodania filmu poprzez otowrzenie formularza.
 # ** Widok Seansów **
 Za pomocą ScreeningViewController  zostało zrealizowane okno do dodawania seansu danego filmu w wybranej sali. Została wprowadzona walidacja sprawdzająca czy o tej godzinie jest już jakiś film w tej sali, czy dane zostały poprawnie wprowadzone oraz czy dany seans jest wyświetlany w kinie o tej dacie. 
 
-![](ScreeningViewView.png?raw=true)
+![](ScreeningView.png?raw=true)
 <br /> Rys 5. okno seansów
 
 # ** Widok użytkowników **
