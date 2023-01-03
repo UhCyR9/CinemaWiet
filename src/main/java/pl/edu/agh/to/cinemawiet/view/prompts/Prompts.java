@@ -26,5 +26,11 @@ public class Prompts {
         alert.setContentText(message);
         alert.showAndWait();
     }
+    public static void addSuccess(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Add prompt");
+        alert.setContentText("Added successfully!");
+        alert.showAndWait();
+    }
 
 }

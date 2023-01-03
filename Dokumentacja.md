@@ -30,6 +30,15 @@ W bazie danych na czas “milestone one” znajdują się cztery tabelę:
 
 # **Wykres UML:**
 ![](uml.png?raw=true)
+Rys. 1 wykres uml
+
+# ** MILESTONE 2**
+
+# ** Menu główne **
+Menu główne zostało zrealizowane w MainViewController. Zawiera ono przyciski odpowiedzialne do przejścia do kolejnych widoków (w zależności od uprawnień pokazane będzie więcej bądź mniej przejść).
+
+![](MainView.png?raw=true)
+Rys. 2 okno menu głownego aplikacji
 
 
 # **Autentykacja:**
@@ -40,13 +49,39 @@ Autentykacja została wprowadzona wykorzystując wzorzec singleton. Klasą, któ
    1. **mail**: admin@admin.com
    1. **hasło**: admin
    1. Posiada dostęp do wszystkich 3 aktualnie zaimplementowanych widoków czyli user, screening oraz film view
-1. **manager** - 
+2. **manager** - 
    1. **mail**: man@man.com
    1. **hasło**: manager
    1. Posiada dostęp do film oraz user view
-1. **employee** - 
+3. **employee** - 
    1. **mail**: user@user.com
-   1. **hasło**: user
-   1. Posiada dostęp wyłącznie do screning view
+   2. **hasło**: user
+   3. Posiada dostęp wyłącznie do screning view
+
+![](LoginView.png?raw=true)
+Rys 3. okno lohowania
+
+# **Widok Filmów**
+Za pomocą FilmViewController zostało zrealizowane okno wyświetlania filmów dostępnych w kinie.
+Jest wyświetlana lista pokazująca filmy znajdujące się w bazie danych wraz z ich tytułem, rodzajem kina oraz czasem trwania seansu.  Dodatkowo w górnej części okna widać ikonę odpowiednią za wyświetlanie filmów polecanych przez kino. Każdy film z listy jesteśmy sami w stanie dodać do takiej rekomendacji klikając w jego plakat. 
+Istnieje również opcja dodania filmu poprzez otowrzenie formularza.
+
+![](FilmView.png?raw=true)
+Rys 4. okno listy filmów
+
+# ** Widok Seansów **
+Za pomocą ScreeningViewController  zostało zrealizowane okno do dodawania seansu danego filmu w wybranej sali. Została wprowadzona walidacja sprawdzająca czy o tej godzinie jest już jakiś film w tej sali, czy dane zostały poprawnie wprowadzone oraz czy dany seans jest wyświetlany w kinie o tej dacie. 
+
+![](ScreeningViewView.png?raw=true)
+Rys 5. okno seansów
+
+# ** Widok użytkowników **
+Widok użytkowników nie przeszedł zmian względem milestone one.
+
+![](UserView.png?raw=true)
+Rys 6. Widok użytkowników
+
+
+Dodatkowo każde okno zawiera przycisk cofania do menu głównego.
 
 

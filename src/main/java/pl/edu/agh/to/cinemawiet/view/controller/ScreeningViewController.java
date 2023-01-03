@@ -94,7 +94,7 @@ public class ScreeningViewController {
             String time = selectedHour.getText();
 
             //validate if hour is okay
-            if(!Pattern.matches("[0-2][0-9]+:+[0-9][0-9]",time)){
+            if(!Pattern.matches("[0-2][0-9]+:+[0-5][0-9]",time)){
                 Prompts.screeningFailed("You have not inputted the proper hour");
                 return;
             }
@@ -106,7 +106,7 @@ public class ScreeningViewController {
             LocalTime lt2 = LocalTime.parse(film.getDuration().toString(), DateTimeFormatter.ofPattern("HH:mm:ss"));
             lt1=lt1.plusHours(lt2.getHour()).plusMinutes(lt2.getMinute()).plusSeconds(lt2.getSecond());
 
-            toConvert = date + " " + lt1.toString()+":00";
+            toConvert = date + " " + lt1.toString()+ ":00";
             Timestamp endingDate = Timestamp.valueOf(toConvert);
 
             //validate if film is displayed between
@@ -132,7 +132,7 @@ public class ScreeningViewController {
             else{
                 ScreeningRequest screeningRequest = new ScreeningRequest(film.getId(), hall.getId(), beginningDate,endingDate);
                 screeningController.addScreening(screeningRequest);
-
+                Prompts.addSuccess();
             }
         }
     }

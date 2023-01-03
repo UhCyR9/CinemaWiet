@@ -97,10 +97,10 @@ public class FilmViewController {
 //            SET FORM
 
             Dialog<ButtonType> dialog = new Dialog<>();
-            dialog.setTitle("Dodaj film");
+            dialog.setTitle("Add film");
 
-            ButtonType okButtonType = new ButtonType("Dodaj", ButtonBar.ButtonData.OK_DONE);
-            ButtonType cancelButtonType = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+            ButtonType okButtonType = new ButtonType("Add", ButtonBar.ButtonData.OK_DONE);
+            ButtonType cancelButtonType = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
             dialog.getDialogPane().getButtonTypes().addAll(okButtonType, cancelButtonType);
 
             GridPane grid = new GridPane();
@@ -110,40 +110,40 @@ public class FilmViewController {
 
 
             TextField titleField = new TextField();
-            titleField.setPromptText("Nazwa");
+            titleField.setPromptText("Name");
 
             DatePicker dateFrom = new DatePicker();
-            dateFrom.setPromptText("Data od");
+            dateFrom.setPromptText("Date from");
 
             DatePicker dateTo = new DatePicker();
-            dateTo.setPromptText("Data do");
+            dateTo.setPromptText("Date to");
 
             TextField durationField = new TextField();
-            durationField.setPromptText("Czas trwania Format - HH:MM:SS");
+            durationField.setPromptText("Duration Format - HH:MM:SS");
 
             TextField categoryField = new TextField();
-            categoryField.setPromptText("Kategoria");
+            categoryField.setPromptText("Category");
 
             TextField imageUrlField = new TextField();
-            imageUrlField.setPromptText("URL obrazka");
+            imageUrlField.setPromptText("URL of poster");
 
 
-            grid.add(new Label("Nazwa:"), 0, 0);
+            grid.add(new Label("Name:"), 0, 0);
             grid.add(titleField, 1, 0);
 
-            grid.add(new Label("Data od:"), 0, 1);
+            grid.add(new Label("Date from:"), 0, 1);
             grid.add(dateFrom, 1, 1);
 
-            grid.add(new Label("Data do:"), 0, 2);
+            grid.add(new Label("Date to:"), 0, 2);
             grid.add(dateTo, 1, 2);
 
-            grid.add(new Label("Czas trwania:"), 0, 3);
+            grid.add(new Label("Duration:"), 0, 3);
             grid.add(durationField, 1, 3);
 
-            grid.add(new Label("Kategoria:"), 0, 4);
+            grid.add(new Label("Category:"), 0, 4);
             grid.add(categoryField, 1, 4);
 
-            grid.add(new Label("URL obrazka:"), 0, 5);
+            grid.add(new Label("URL of poster:"), 0, 5);
             grid.add(imageUrlField, 1, 5);
 
             dialog.getDialogPane().setContent(grid);
@@ -171,12 +171,12 @@ public class FilmViewController {
 
         vBox.setOnMouseClicked(event -> {
             Dialog<ButtonType> dialog = new Dialog<>();
-            dialog.setTitle("Rekomendacja");
+            dialog.setTitle("Recommendation");
             if (film.isRecommended()) {
-                dialog.setContentText("Czy chcesz usunąć film " + film.getName() + " z rekomendowanych?");
+                dialog.setContentText("Do you want to delete " + film.getName() + " from recommended?");
 
-                ButtonType okButtonType = new ButtonType("Usuń", ButtonBar.ButtonData.OK_DONE);
-                ButtonType cancelButtonType = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+                ButtonType okButtonType = new ButtonType("Delete", ButtonBar.ButtonData.OK_DONE);
+                ButtonType cancelButtonType = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
                 dialog.getDialogPane().getButtonTypes().addAll(okButtonType, cancelButtonType);
 
                 dialog.setResultConverter(dialogButton -> {
@@ -188,10 +188,10 @@ public class FilmViewController {
                 });
             }
             else {
-                dialog.setContentText("Czy chcesz dodać film " + film.getName() + " do rekomendowanych?");
+                dialog.setContentText("Do you want to add " + film.getName() + " to recommended?");
 
-                ButtonType okButtonType = new ButtonType("Dodaj", ButtonBar.ButtonData.OK_DONE);
-                ButtonType cancelButtonType = new ButtonType("Anuluj", ButtonBar.ButtonData.CANCEL_CLOSE);
+                ButtonType okButtonType = new ButtonType("Add", ButtonBar.ButtonData.OK_DONE);
+                ButtonType cancelButtonType = new ButtonType("Cancel", ButtonBar.ButtonData.CANCEL_CLOSE);
                 dialog.getDialogPane().getButtonTypes().addAll(okButtonType, cancelButtonType);
 
                 dialog.setResultConverter(dialogButton -> {
