@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import com.sun.javafx.scene.control.IntegerField?>
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.HallViewController"
+          prefHeight="250.0" prefWidth="250.0" stylesheets="/view/UserViewStyle.css">
+
+    <padding><Insets top="10" right="20" bottom="10" left="50"/></padding>
+        <VBox alignment="BASELINE_CENTER" spacing="10">
+            <Label text="NEW HALL"/>
+            <Label text="Name:"/>
+            <TextField fx:id="nameField"/>
+            <Label text="Seat amount:"/>
+            <IntegerField maxWidth="35" fx:id="seatAmountField"/>
+
+            <Button text="Add Hall" onAction="#addHall"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+        </VBox>
+
+
+</GridPane>

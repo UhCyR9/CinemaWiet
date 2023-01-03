@@ -11,8 +11,20 @@ public class Hall {
     @Column(name = "HALLID")
     private long id;
 
+    @Column(name = "NAME")
+    private String name;
+
     @Column(name = "NUMBEROFSEATS")
-    private long numberOfSeats;
+    private int numberOfSeats;
+
+    public Hall(String name, int numberOfSeats) {
+        this.name = name;
+        this.numberOfSeats = numberOfSeats;
+    }
+
+    public Hall() {
+
+    }
 
     public long getId() {
         return id;
@@ -22,11 +34,19 @@ public class Hall {
         this.id = id;
     }
 
-    public long getNumberOfSeats() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getNumberOfSeats() {
         return numberOfSeats;
     }
 
-    public void setNumberOfSeats(long numberOfSeats) {
+    public void setNumberOfSeats(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
     }
 }

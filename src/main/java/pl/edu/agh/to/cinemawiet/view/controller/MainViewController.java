@@ -21,6 +21,9 @@ public class MainViewController {
     private Button filmViewButton;
 
     @FXML
+    private Button hallViewButton;
+
+    @FXML
     public void initialize() {
         UserRole role = getLoggedUserRole();
         switch (role) {
@@ -28,6 +31,7 @@ public class MainViewController {
             case EMPLOYEE -> {
                 userViewButton.setDisable(true);
                 filmViewButton.setDisable(true);
+                hallViewButton.setDisable(true);
             }
         }
     }
@@ -46,6 +50,11 @@ public class MainViewController {
     @FXML
     public void screeningView() throws Exception {
         ApplicationUI.setScene(getClass().getResource("/view/ScreeningView.fxml"));
+    }
+
+    @FXML
+    public void hallView() throws Exception {
+        ApplicationUI.setScene(getClass().getResource("/view/HallView.fxml"));
     }
 
     @FXML

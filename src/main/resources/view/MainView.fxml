@@ -8,7 +8,7 @@
           xmlns:fx="http://javafx.com/fxml"
           fx:controller="pl.edu.agh.to.cinemawiet.view.controller.MainViewController"
           prefHeight="200.0" prefWidth="400.0" stylesheets="/view/UserViewStyle.css"
-          hgap="10" vgap="80">
+          hgap="10" vgap="30">
 
     <padding><Insets top="25" right="70" bottom="25" left="70"/></padding>
     <VBox GridPane.rowIndex="0" GridPane.columnIndex="0" alignment="BASELINE_CENTER" spacing="10">
@@ -21,6 +21,9 @@
         <Button text="Film view" fx:id="filmViewButton" onAction="#filmView"/>
     </VBox>
     <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="BASELINE_CENTER" spacing="10">
+        <Button text="Hall view" fx:id="hallViewButton" onAction="#hallView"/>
+    </VBox>
+    <VBox GridPane.rowIndex="2" GridPane.columnIndex="1" alignment="BASELINE_CENTER" spacing="10">
         <Button text="Logout" onAction="#logout"/>
     </VBox>
 </GridPane>

@@ -11,7 +11,7 @@
             prefHeight="420.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css">
 
     <center>
-        <VBox styleClass="image-box" prefWidth="250">
+        <VBox prefWidth="250">
             <Label text="USERS" prefWidth="120"/>
             <ListView fx:id="usersList" prefWidth="200"/>
         </VBox>
@@ -36,7 +36,7 @@
             </HBox>
 
             <Button text="Add User" onAction="#addUser"/>
-            <Button fx:id="returnButton" mnemonicParsing="false" text="Cofnij do menu głównego" onAction="#mainView"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
         </VBox>
     </left>
 

@@ -14,12 +14,12 @@
     <top>
         <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 10 10 10 10;">
             <VBox>
-                <Label text="Wybierz film:"/>
+                <Label text="Choose film:"/>
                 <ListView fx:id="filmsList" prefWidth="200"/>
             </VBox>
 
             <VBox>
-                <Label text="Wybierz salę:"/>
+                <Label text="Choose hall:"/>
                 <ListView fx:id="hallsList" prefWidth="200"/>
             </VBox>
         </HBox>
@@ -33,12 +33,12 @@
             </VBox>
 
             <VBox alignment="CENTER" prefWidth="200">
-                <Label text="Godzina"/>
+                <Label text="Hour"/>
                 <TextField fx:id="selectedHour" promptText="HH:MM" maxWidth="60"/>
             </VBox>
 
-            <Button text="Akceptuj" onAction="#addScreening"/>
-            <Button fx:id="returnButton" mnemonicParsing="false" text="Cofnij do menu głównego" onAction="#mainView"/>
+            <Button text="Accept" onAction="#addScreening"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
         </VBox>
     </center>
 

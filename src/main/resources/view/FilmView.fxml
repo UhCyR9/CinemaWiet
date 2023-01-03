@@ -12,10 +12,10 @@
 
     <top>
         <HBox prefHeight="40.0" BorderPane.alignment="CENTER" alignment="CENTER" spacing="20.0">
-            <Button fx:id="addFilmButton" mnemonicParsing="false" text="Dodaj film"/>
-            <Button fx:id="returnButton" mnemonicParsing="false" text="Cofnij do menu głównego" onAction="#mainView"/>
-            <CheckBox fx:id="showRecommendedCheckBox" mnemonicParsing="false" text="Pokaż rekomendowane"/>
-            <Label text="Aby dodać lub usunąć film z rekomendowanych kliknij w jego plakat"/>
+            <Button fx:id="addFilmButton" mnemonicParsing="false" text="Add film"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+            <CheckBox fx:id="showRecommendedCheckBox" mnemonicParsing="false" text="Show recommended"/>
+            <Label text="To add film to recommended click on its picture"/>
         </HBox>
     </top>
 
