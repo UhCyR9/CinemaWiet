@@ -17,6 +17,7 @@ public class Hall {
     @Column(name = "NUMBEROFSEATS")
     private int numberOfSeats;
 
+
     public Hall(String name, int numberOfSeats) {
         this.name = name;
         this.numberOfSeats = numberOfSeats;
