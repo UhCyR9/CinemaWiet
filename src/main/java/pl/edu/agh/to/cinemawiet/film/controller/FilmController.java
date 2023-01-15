@@ -6,6 +6,7 @@ import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
 import pl.edu.agh.to.cinemawiet.film.service.FilmService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 public class FilmController {
@@ -30,6 +31,10 @@ public class FilmController {
 
     public void removeFilmFromRecommended(Film film) {
         filmService.removeFilmFromRecommended(film);
+    }
+
+    public Optional<Film> getFilmById(long id) {
+        return filmService.getFilmById(id);
     }
 
 

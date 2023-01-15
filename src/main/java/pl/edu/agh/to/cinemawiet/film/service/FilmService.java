@@ -7,6 +7,7 @@ import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
 import pl.edu.agh.to.cinemawiet.film.repository.FilmRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FilmService {
@@ -42,5 +43,9 @@ public class FilmService {
         filmToAdd.setImageUrl(filmRequest.imageUrl());
 
         return filmRepository.save(filmToAdd);
+    }
+
+    public Optional<Film> getFilmById(long id) {
+        return filmRepository.getFilmById(id);
     }
 }

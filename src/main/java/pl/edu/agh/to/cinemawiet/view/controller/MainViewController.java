@@ -24,6 +24,9 @@ public class MainViewController {
     private Button hallViewButton;
 
     @FXML
+    private Button screeningListView;
+
+    @FXML
     public void initialize() {
         UserRole role = getLoggedUserRole();
         switch (role) {
@@ -55,6 +58,11 @@ public class MainViewController {
     @FXML
     public void hallView() throws Exception {
         ApplicationUI.setScene(getClass().getResource("/view/HallView.fxml"));
+    }
+
+    @FXML
+    public void screeningListView() throws Exception {
+        ApplicationUI.setScene(getClass().getResource("/view/ScreeningListView.fxml"));
     }
 
     @FXML

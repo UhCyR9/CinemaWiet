@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.geometry.Insets?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningListViewController"
+          prefHeight="420.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css">
+
+    <padding><Insets top="5" right="10" bottom="10" left="10"/></padding>
+    <VBox prefWidth="250">
+        <Label text="Screenings" prefWidth="120"/>
+        <ListView fx:id="screeningList" prefWidth="200"/>
+    </VBox>
+    <VBox>
+        <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+        <Button mnemonicParsing="false" text="Screening detail" onAction="#detailView"/>
+    </VBox>
+</GridPane>
