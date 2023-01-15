@@ -11,14 +11,19 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.edu.agh.to.cinemawiet.ApplicationUI;
+import pl.edu.agh.to.cinemawiet.email.EmailSenderService;
 import pl.edu.agh.to.cinemawiet.film.controller.FilmController;
 import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
+import pl.edu.agh.to.cinemawiet.user.model.User;
+import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
 import java.sql.Date;
 import java.sql.Time;
+import java.util.List;
 
 
 @Component
@@ -37,6 +42,12 @@ public class FilmViewController {
 
     @FXML
     private FlowPane filmFlowPane;
+
+    @FXML
+    private Button emailButton;
+
+    @Autowired
+    private EmailSenderService emailSenderService;
 
     public FilmViewController(FilmController filmController) {
         this.filmController = filmController;
@@ -74,6 +85,7 @@ public class FilmViewController {
 
         initializeAddFilmButton();
         initializeShowRecommendedCheckBox();
+        initializeEmailButton();
 
     }
 
@@ -228,5 +240,23 @@ public class FilmViewController {
     @FXML
     public void mainView() throws Exception{
         ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
+    }
+    private void initializeEmailButton(){
+        emailButton.setOnAction(event -> {sendMail();});
+    }
+    public void sendMail(){
+        StringBuilder message=new StringBuilder();
+        message.append("Hello, these are new movies we are promoting now:\n\n");
+        for (Film recommendedFilm : recommendedFilms) {
+            message.append(recommendedFilm.getName()).append(",\n");
+        }
+        List<User> users = filmController.getAllUsers();
+
+        StringBuilder prompt=new StringBuilder();
+        for (User user: users){
+            emailSenderService.sendEmail(user.getEmail(),"New movies to promote",message.toString());
+            prompt.append("Mail send to: ").append(user.getEmail()).append("\n");
+        }
+        Prompts.mailSuccess(prompt.toString());
     }
 }

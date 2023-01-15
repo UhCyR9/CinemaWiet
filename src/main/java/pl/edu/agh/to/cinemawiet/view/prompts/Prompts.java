@@ -32,5 +32,11 @@ public class Prompts {
         alert.setContentText("Added successfully!");
         alert.showAndWait();
     }
+    public static void mailSuccess(String info){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Email prompt");
+        alert.setContentText(info);
+        alert.showAndWait();
+    }
 
 }

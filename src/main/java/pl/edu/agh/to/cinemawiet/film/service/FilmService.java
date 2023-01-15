@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.film.model.FilmRequest;
 import pl.edu.agh.to.cinemawiet.film.repository.FilmRepository;
+import pl.edu.agh.to.cinemawiet.user.model.User;
 
 import java.util.List;
 
@@ -42,5 +43,8 @@ public class FilmService {
         filmToAdd.setImageUrl(filmRequest.imageUrl());
 
         return filmRepository.save(filmToAdd);
+    }
+    public List<User> getAllUsers(){
+        return filmRepository.allUsers();
     }
 }

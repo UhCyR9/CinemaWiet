@@ -14,6 +14,7 @@
         <HBox prefHeight="40.0" BorderPane.alignment="CENTER" alignment="CENTER" spacing="20.0">
             <Button fx:id="addFilmButton" mnemonicParsing="false" text="Add film"/>
             <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+            <Button fx:id="emailButton" mnemonicParsing="false" text="Send mail about promoted films"/>
             <CheckBox fx:id="showRecommendedCheckBox" mnemonicParsing="false" text="Show recommended"/>
             <Label text="To add film to recommended click on its picture"/>
         </HBox>

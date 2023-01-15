@@ -36,6 +36,7 @@
             </HBox>
 
             <Button text="Add User" onAction="#addUser"/>
+            <Button text="Delete User" onAction="#deleteUser"/>
             <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
         </VBox>
     </left>

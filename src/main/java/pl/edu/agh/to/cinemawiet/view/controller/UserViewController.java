@@ -4,9 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 import pl.edu.agh.to.cinemawiet.ApplicationUI;
+import pl.edu.agh.to.cinemawiet.email.EmailSenderService;
 import pl.edu.agh.to.cinemawiet.user.controller.UserController;
 import pl.edu.agh.to.cinemawiet.user.model.User;
 import pl.edu.agh.to.cinemawiet.user.model.UserRequest;
@@ -48,6 +50,11 @@ public class UserViewController {
 
     private final PasswordEncoder encoder;
 
+    private User highlightedUser;
+
+    @Autowired
+    private EmailSenderService emailSenderService;
+
 
     public UserViewController(UserController userController, PasswordEncoder encoder) {
         this.userController = userController;
@@ -61,6 +68,9 @@ public class UserViewController {
 
         ObservableList<User> users = FXCollections.observableArrayList(userController.getAllUsers());
         usersList.setItems(users);
+        usersList.setOnMouseClicked(event -> {
+            highlightedUser=usersList.getSelectionModel().getSelectedItem();
+        });
     }
 
     @FXML
@@ -106,5 +116,15 @@ public class UserViewController {
     @FXML
     public void mainView() throws Exception{
         ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
+    }
+    @FXML
+    public void deleteUser() {
+        emailSenderService.sendEmail(highlightedUser.getEmail(),"Layoff letter",
+                "Dear " + highlightedUser.getName() +" " + highlightedUser.getSecondName() +"\n\n"
+        +"We are sorry to inform you but we do not require your service anymore.\n\n" + "Sincerely CinemaWiet");
+
+
+        userController.deleteUserById(highlightedUser.getId());
+        usersList.getItems().remove(highlightedUser);
     }
 }
