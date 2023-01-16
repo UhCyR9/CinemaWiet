@@ -32,5 +32,8 @@ public class UserController {
     public Optional<User> getUserByAuth(String mail, String password) {
         return userService.getUserByAuth(mail, password);
     }
+    public void deleteUserById(Long Id){
+        userService.deleteUserById(Id);
+    }
 
 }

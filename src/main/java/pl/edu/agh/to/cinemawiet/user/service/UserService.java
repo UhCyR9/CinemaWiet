@@ -45,4 +45,7 @@ public class UserService {
         }
         return Optional.empty();
     }
+    public void deleteUserById(Long Id){
+        userRepository.deleteById(Id);
+    }
 }
