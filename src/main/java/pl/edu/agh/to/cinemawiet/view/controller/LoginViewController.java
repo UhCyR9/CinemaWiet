@@ -39,8 +39,6 @@ public class LoginViewController {
             UserContext.login(logged.get());
             ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
         } else {
-            UserContext.login(userController.getUserByAuth("admin@admin.com", "admin").get());
-            ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
-//            Prompts.loginFailed();
+            Prompts.loginFailed();
         }
     }}
