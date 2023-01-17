@@ -20,10 +20,16 @@ public class JSONReader {
         this.parser = JsonParserFactory.getJsonParser();
     }
 
-    public Map<String, Object> parse(long screeningId) throws FileNotFoundException {
+    public Map<String, Object> parseMap(long screeningId) throws FileNotFoundException {
         String path = "/screenings/" + screeningId + ".json";
         String file = Objects.requireNonNull(getClass().getResource(path)).getFile();
         String myJson = new Scanner(new File(file)).useDelimiter("\\Z").next();
         return parser.parseMap(myJson);
+    }
+
+    public String getString(long hallId) throws FileNotFoundException {
+        String path = "/halls/" + hallId + ".json";
+        String file = Objects.requireNonNull(getClass().getResource(path)).getFile();
+        return new Scanner(new File(file)).useDelimiter("\\Z").next();
     }
 }

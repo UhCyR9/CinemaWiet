@@ -45,7 +45,7 @@ public class ScreeningDetailViewController {
 
     @FXML
     public void initialize() throws FileNotFoundException {
-        seatConfiguration = jsonReader.parse(screening.getScreeningId());
+        seatConfiguration = jsonReader.parseMap(screening.getScreeningId());
         mainGrid.setHgap(2);
         mainGrid.setVgap(2);
         seatConfiguration.forEach((key, value) -> {

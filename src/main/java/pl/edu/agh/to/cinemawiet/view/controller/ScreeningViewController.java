@@ -11,9 +11,12 @@ import pl.edu.agh.to.cinemawiet.film.model.Film;
 import pl.edu.agh.to.cinemawiet.hall.controller.HallController;
 import pl.edu.agh.to.cinemawiet.hall.model.Hall;
 import pl.edu.agh.to.cinemawiet.screening.controller.ScreeningController;
+import pl.edu.agh.to.cinemawiet.screening.model.Screening;
 import pl.edu.agh.to.cinemawiet.screening.model.ScreeningRequest;
+import pl.edu.agh.to.cinemawiet.utils.JSONWriter;
 import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
+import java.io.IOException;
 import java.sql.Timestamp;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,8 +31,8 @@ public class ScreeningViewController {
 
     private final FilmController filmController;
     private final ScreeningController screeningController;
-
     private final HallController hallController;
+    private final JSONWriter jsonWriter;
 
     @FXML
     ListView<Film> filmsList;
@@ -41,10 +44,11 @@ public class ScreeningViewController {
     TextField selectedHour;
 
 
-    public ScreeningViewController(FilmController filmController, ScreeningController screeningController,HallController hallController) {
+    public ScreeningViewController(FilmController filmController, ScreeningController screeningController, HallController hallController, JSONWriter jsonWriter) {
         this.filmController = filmController;
         this.screeningController = screeningController;
         this.hallController=hallController;
+        this.jsonWriter = jsonWriter;
     }
     @FXML
     public void initialize() {
@@ -82,7 +86,7 @@ public class ScreeningViewController {
     }
 
     @FXML
-    public void  addScreening() {
+    public void  addScreening() throws IOException {
 
         if (filmsList.getSelectionModel().getSelectedItem() == null || hallsList.getSelectionModel().getSelectedItem() == null || selectedDate.getValue() == null || selectedHour.getText().isEmpty()) {
             Prompts.screeningFailed("You have not completed the entire form");
@@ -131,7 +135,8 @@ public class ScreeningViewController {
             //adding new screening
             else{
                 ScreeningRequest screeningRequest = new ScreeningRequest(film.getId(), hall.getId(), beginningDate,endingDate);
-                screeningController.addScreening(screeningRequest);
+                Screening screening = screeningController.addScreening(screeningRequest);
+                jsonWriter.writeToNewFile(screening.getScreeningId(), screening.getHallId());
                 Prompts.addSuccess();
             }
         }
