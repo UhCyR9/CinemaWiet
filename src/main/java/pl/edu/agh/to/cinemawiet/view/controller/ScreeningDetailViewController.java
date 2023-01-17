@@ -97,7 +97,7 @@ public class ScreeningDetailViewController {
     public void reserve() throws Exception {
         for (Vector vector : reservedPlaces) {
             Map<String, Object> row = (Map<String, Object>) seatConfiguration.get(String.valueOf(vector.row()));
-            row.put(String.valueOf(vector.col()), "placed");
+            row.put(String.valueOf(vector.col()), "taken");
             seatConfiguration.put(String.valueOf(vector.row()), row);
         }
         jsonWriter.write(seatConfiguration, screening.getScreeningId());
