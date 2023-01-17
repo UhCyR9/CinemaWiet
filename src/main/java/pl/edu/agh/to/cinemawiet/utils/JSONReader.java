@@ -14,7 +14,6 @@ import java.util.Scanner;
 @Component
 public class JSONReader {
 
-
     private final JsonParser parser;
 
     public JSONReader() {
@@ -24,8 +23,7 @@ public class JSONReader {
     public Map<String, Object> parse(long screeningId) throws FileNotFoundException {
         String path = "/screenings/" + screeningId + ".json";
         String file = Objects.requireNonNull(getClass().getResource(path)).getFile();
-        String myJson = new Scanner(new File(file))
-                .useDelimiter("\\Z").next();
+        String myJson = new Scanner(new File(file)).useDelimiter("\\Z").next();
         return parser.parseMap(myJson);
     }
 }

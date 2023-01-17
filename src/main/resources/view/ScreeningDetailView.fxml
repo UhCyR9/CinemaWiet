@@ -3,10 +3,24 @@
 
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningDetailViewController"
-            prefHeight="400.0" prefWidth="600.0"
-            stylesheets="/view/UserViewStyle.css">
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.control.Button?>
+<GridPane xmlns="http://javafx.com/javafx"
+          xmlns:fx="http://javafx.com/fxml"
+          fx:id="mainGrid"
+          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningDetailViewController"
+          prefHeight="400.0" prefWidth="600.0"
+          stylesheets="/view/UserViewStyle.css">
 
-</AnchorPane>
+    <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
+    <Rectangle GridPane.columnSpan="9" GridPane.rowIndex="50" fill="black" height="5" width="420"/>
+    <VBox GridPane.rowIndex="70" GridPane.columnIndex="3" alignment="BASELINE_CENTER" spacing="10" GridPane.columnSpan="2">
+        <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+    </VBox>
+
+    <VBox GridPane.rowIndex="70" GridPane.columnIndex="5" alignment="BASELINE_CENTER" spacing="10" GridPane.columnSpan="2">
+        <Button mnemonicParsing="false" text="Reserve" onAction="#reserve"/>
+    </VBox>
+
+</GridPane>
