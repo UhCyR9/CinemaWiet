@@ -1,26 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<GridPane alignment="CENTER" hgap="10" prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css" vgap="20" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningListViewController">
 
-<?import javafx.geometry.Insets?>
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningListViewController"
-          prefHeight="420.0" prefWidth="600.0" stylesheets="/view/UserViewStyle.css"
-          hgap="10" vgap="20">
-
-    <padding><Insets top="5" right="10" bottom="10" left="10"/></padding>
-    <VBox GridPane.rowIndex="0" GridPane.columnSpan="2" prefWidth="500">
-        <Label text="Screenings" prefWidth="120"/>
-        <ListView fx:id="screeningList" prefWidth="400"/>
+    <padding><Insets bottom="10" left="10" right="10" top="5" /></padding>
+    <VBox prefWidth="500" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <Label prefWidth="120" text="Screenings" />
+        <ListView fx:id="screeningList" prefWidth="400" />
     </VBox>
-    <VBox GridPane.rowIndex="1" GridPane.columnIndex="1" alignment="BASELINE_CENTER" spacing="10">
-        <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#mainView" text="Main View" />
     </VBox>
-    <VBox GridPane.rowIndex="1" GridPane.columnIndex="0" alignment="BASELINE_CENTER" spacing="10">
-        <Button mnemonicParsing="false" text="Screening detail" onAction="#detailView"/>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#detailView" text="Screening detail" />
     </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

@@ -24,7 +24,10 @@ public class MainViewController {
     private Button hallViewButton;
 
     @FXML
-    private Button screeningListView;
+    private Button screeningListViewButton;
+
+    @FXML
+    private Button statisticsViewButton;
 
     @FXML
     public void initialize() {
@@ -35,6 +38,7 @@ public class MainViewController {
                 userViewButton.setDisable(true);
                 filmViewButton.setDisable(true);
                 hallViewButton.setDisable(true);
+                screeningListViewButton.setDisable(true);
             }
         }
     }
@@ -63,6 +67,11 @@ public class MainViewController {
     @FXML
     public void screeningListView() throws Exception {
         ApplicationUI.setScene(getClass().getResource("/view/ScreeningListView.fxml"));
+    }
+
+    @FXML
+    public void statisticsView() throws Exception {
+        ApplicationUI.setScene(getClass().getResource("/view/StatisticsView.fxml"));
     }
 
     @FXML

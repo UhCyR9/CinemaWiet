@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.geometry.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-<?import javafx.geometry.Insets?>
 
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.LoginViewController"
-          prefHeight="130.0" prefWidth="250.0" stylesheets="/view/UserViewStyle.css">
+<GridPane alignment="CENTER" prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.cinemawiet.view.controller.LoginViewController">
 
-    <padding><Insets top="25" right="50" bottom="25" left="50"/></padding>
+    <padding><Insets bottom="25" left="50" right="50" top="25" /></padding>
         <VBox alignment="BASELINE_CENTER" spacing="10">
-            <Label text="Email:"/>
-            <TextField fx:id="mailField"/>
-            <Label text="Password:"/>
-            <PasswordField fx:id="passwordField"/>
-            <Button text="Login User" onAction="#loginUser"/>
+            <Label text="Email:" />
+            <TextField fx:id="mailField" />
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" />
+            <Button onAction="#loginUser" text="Login User" />
         </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
 </GridPane>

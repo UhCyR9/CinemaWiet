@@ -1,26 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.control.Button?>
-<GridPane xmlns="http://javafx.com/javafx"
-          xmlns:fx="http://javafx.com/fxml"
-          fx:id="mainGrid"
-          fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningDetailViewController"
-          prefHeight="400.0" prefWidth="600.0"
-          stylesheets="/view/UserViewStyle.css">
+<GridPane fx:id="mainGrid" alignment="CENTER" prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningDetailViewController">
 
-    <padding><Insets top="25" right="100" bottom="25" left="100"/></padding>
-    <Rectangle GridPane.columnSpan="9" GridPane.rowIndex="50" fill="black" height="5" width="420"/>
-    <VBox GridPane.rowIndex="70" GridPane.columnIndex="3" alignment="BASELINE_CENTER" spacing="10" GridPane.columnSpan="2">
-        <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+    <padding><Insets bottom="25" left="100" right="100" top="25" /></padding>
+    <Rectangle fill="black" height="5" width="420" GridPane.columnSpan="9" GridPane.rowIndex="50" />
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="3" GridPane.columnSpan="2" GridPane.rowIndex="70">
+        <Button mnemonicParsing="false" onAction="#mainView" text="Main View" />
     </VBox>
 
-    <VBox GridPane.rowIndex="70" GridPane.columnIndex="5" alignment="BASELINE_CENTER" spacing="10" GridPane.columnSpan="2">
-        <Button mnemonicParsing="false" text="Reserve" onAction="#reserve"/>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="5" GridPane.columnSpan="2" GridPane.rowIndex="70">
+        <Button mnemonicParsing="false" onAction="#reserve" text="Reserve" />
     </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
 
 </GridPane>

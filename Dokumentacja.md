@@ -84,4 +84,29 @@ Widok użytkowników nie przeszedł zmian względem milestone one.
 
 Dodatkowo każde okno zawiera przycisk cofania do menu głównego.
 
+![](StatisticsView.png?raw=true)
+<br /> Rys 7. Widok statystyk
+
+Dodaliśmy widok statystyk, który pokazuje nam najpopulrniejsze filmy puszczane w kinie, oraz najpopularniejsze kategorie filmów.
+
+![](ReservationView.png?raw=true)
+<br /> Rys 8. Widok rezerwacji
+
+Dodaliśmy widok rezerwacji, który pokazuje nam zarezerwowane miejsca w sali, oraz umożliwia nam zarezerwowanie nowego miejsca.
+
+![](SendMailView.png?raw=true)
+<br /> Rys 9. Widok wysyłania maili
+
+Dodaliśmy widok wysyłania maili, który umożliwia nam wysłanie maila do wszystkich pracowników z informacją o nowych rekomendacjach filmów.
+
+
+Ponadto, znormalizowaliśmy wielkość widoków oraz zmieniliśmy wygląd naszej aplikacji.
+
+![](JsonView.png?raw=true)
+<br /> Rys 10. Konfiguracja za pomocą json
+
+Dodaliśmy również konfigurację sal poprzez plik json.
+
+
+
 
