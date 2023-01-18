@@ -84,6 +84,8 @@ Widok użytkowników nie przeszedł zmian względem milestone one.
 
 Dodatkowo każde okno zawiera przycisk cofania do menu głównego.
 
+# ** MILESTONE 3**
+
 ![](StatisticsView.png?raw=true)
 <br /> Rys 7. Widok statystyk
 
