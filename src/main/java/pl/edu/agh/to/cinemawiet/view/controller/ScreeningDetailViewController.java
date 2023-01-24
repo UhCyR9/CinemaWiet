@@ -10,6 +10,7 @@ import pl.edu.agh.to.cinemawiet.utils.JSONReader;
 import pl.edu.agh.to.cinemawiet.utils.JSONWriter;
 import pl.edu.agh.to.cinemawiet.view.elements.CustomRectangle;
 import pl.edu.agh.to.cinemawiet.view.elements.Vector;
+import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
 import java.io.FileNotFoundException;
 import java.util.HashMap;
@@ -102,5 +103,6 @@ public class ScreeningDetailViewController {
         }
         jsonWriter.write(seatConfiguration, screening.getScreeningId());
         ApplicationUI.setScene(getClass().getResource("/view/MainView.fxml"));
+        Prompts.reserved();
     }
 }

@@ -32,6 +32,14 @@ public class Prompts {
         alert.setContentText("Added successfully!");
         alert.showAndWait();
     }
+
+    public static void reserved(){
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Reservation prompt");
+        alert.setContentText("Reserved successfully!");
+        alert.showAndWait();
+    }
+
     public static void mailSuccess(String info){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle("Email prompt");

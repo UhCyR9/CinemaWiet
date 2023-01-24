@@ -79,6 +79,7 @@ public class UserViewController {
         try {
             User addedUser = userController.addUser(userRequest);
             usersList.getItems().add(addedUser);
+            Prompts.addSuccess();
         } catch (InputValidationException ex) {
             Prompts.userError(ex.getMessage());
         }

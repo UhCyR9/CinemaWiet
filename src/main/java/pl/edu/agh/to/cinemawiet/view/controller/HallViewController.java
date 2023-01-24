@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import pl.edu.agh.to.cinemawiet.ApplicationUI;
 import pl.edu.agh.to.cinemawiet.hall.controller.HallController;
 import pl.edu.agh.to.cinemawiet.hall.model.HallRequest;
+import pl.edu.agh.to.cinemawiet.view.prompts.Prompts;
 
 
 @Controller
@@ -29,6 +30,7 @@ public class HallViewController {
     public void addHall() {
         HallRequest hallRequest = createHallRequest();
         hallController.addHall(hallRequest);
+        Prompts.addSuccess();
     }
 
     @FXML
