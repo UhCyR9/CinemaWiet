@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.edu.agh.to.cinemawiet.view.controller.FilmViewController"
+            prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css">
+
+    <top>
+        <HBox prefHeight="40.0" BorderPane.alignment="CENTER" alignment="CENTER" spacing="20.0">
+            <Button fx:id="addFilmButton" mnemonicParsing="false" text="Add film"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+            <Button fx:id="emailButton" mnemonicParsing="false" text="Send mail about promoted films"/>
+            <CheckBox fx:id="showRecommendedCheckBox" mnemonicParsing="false" text="Show recommended"/>
+            <Label text="To add film to recommended click on its picture"/>
+        </HBox>
+    </top>
+
+    <center>
+        <ScrollPane fitToHeight="true" fitToWidth="true">
+            <FlowPane fx:id="filmFlowPane" prefHeight="200.0" prefWidth="200.0" HBox.hgrow="ALWAYS" VBox.vgrow="ALWAYS" hgap="20.0" vgap="20.0"/>
+        </ScrollPane>
+    </center>
+
+
+</BorderPane>

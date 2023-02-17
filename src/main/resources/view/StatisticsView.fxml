@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<?import javafx.scene.chart.BarChart?>
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.edu.agh.to.cinemawiet.view.controller.StatisticsViewController"
+            prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css">
+
+    <center>
+        <VBox BorderPane.alignment="CENTER" alignment="CENTER" spacing="20.0">
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+            <HBox fx:id="chartHolderHBox">
+
+            </HBox>
+        </VBox>
+
+    </center>
+
+</BorderPane>

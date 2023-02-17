@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="10" prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css" vgap="30" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.cinemawiet.view.controller.MainViewController">
+
+    <padding><Insets bottom="25" left="70" right="70" top="25" /></padding>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+        <Button fx:id="userViewButton" onAction="#userView" text="User view" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="0">
+        <Button fx:id="screeningViewButton" onAction="#screeningView" text="Screening view" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="2" GridPane.rowIndex="0">
+        <Button fx:id="filmViewButton" onAction="#filmView" text="Film view" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button fx:id="hallViewButton" onAction="#hallView" text="Hall view" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="2">
+        <Button fx:id="screeningListViewButton" onAction="#screeningListView" text="Screening list view" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+        <Button fx:id="statisticsViewButton" onAction="#statisticsView" text="Statistics" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="4">
+        <Button onAction="#logout" text="Logout" />
+    </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>

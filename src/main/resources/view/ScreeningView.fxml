@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningViewController"
+            prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css">
+
+
+    <top>
+        <HBox alignment="CENTER" spacing="20.0" style="-fx-padding: 10 10 10 10;">
+            <VBox>
+                <Label text="Choose film:"/>
+                <ListView fx:id="filmsList" prefWidth="200"/>
+            </VBox>
+
+            <VBox>
+                <Label text="Choose hall:"/>
+                <ListView fx:id="hallsList" prefWidth="200"/>
+            </VBox>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox alignment="CENTER" spacing="20.0" style="-fx-padding: 10 10 10 10;" >
+            <VBox alignment="CENTER" prefWidth="200">
+                <Label text="Data"/>
+                <DatePicker fx:id="selectedDate" promptText="Data"/>
+            </VBox>
+
+            <VBox alignment="CENTER" prefWidth="200">
+                <Label text="Hour"/>
+                <TextField fx:id="selectedHour" promptText="HH:MM" maxWidth="60"/>
+            </VBox>
+
+            <Button text="Accept" onAction="#addScreening"/>
+            <Button mnemonicParsing="false" text="Main View" onAction="#mainView"/>
+        </VBox>
+    </center>
+
+</BorderPane>

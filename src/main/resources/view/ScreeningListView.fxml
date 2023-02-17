@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" hgap="10" prefHeight="800.0" prefWidth="800.0" stylesheets="/view/UserViewStyle.css" vgap="20" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.edu.agh.to.cinemawiet.view.controller.ScreeningListViewController">
+
+    <padding><Insets bottom="10" left="10" right="10" top="5" /></padding>
+    <VBox prefWidth="500" GridPane.columnSpan="2" GridPane.rowIndex="0">
+        <Label prefWidth="120" text="Screenings" />
+        <ListView fx:id="screeningList" prefWidth="400" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#mainView" text="Main View" />
+    </VBox>
+    <VBox alignment="BASELINE_CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+        <Button mnemonicParsing="false" onAction="#detailView" text="Screening detail" />
+    </VBox>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
